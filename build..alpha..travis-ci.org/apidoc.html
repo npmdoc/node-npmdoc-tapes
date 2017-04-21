@@ -1,0 +1,117 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/scottcorgan/tapes"
+
+    >tapes (v4.1.0)</a>
+</h1>
+<h4>A more robust tap-producing test harness for node and browsers. Adds beforeEach, afterEach, etc.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tapes">module tapes</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tapes.tapes">
+            function <span class="apidocSignatureSpan"></span>tapes
+            <span class="apidocSignatureSpan">(tape, opts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tapes" id="apidoc.module.tapes">module tapes</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tapes.tapes" id="apidoc.element.tapes.tapes">
+        function <span class="apidocSignatureSpan"></span>tapes
+        <span class="apidocSignatureSpan">(tape, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function tapes(tape, opts) {
+  // Allow consumers of `tapes` to patch the core `tape` library.
+  test.Test = tape.Test;
+
+  delimiter = opts &#x26;&#x26; opts.delimiter || &#x27; &#x27;;
+
+  test.only = function (name, fn, _before, _after) {
+    return test(name, fn, _before, _after, true);
+  };
+
+  test.skip = function (name, fn, _before, _after) {
+    return test(name, fn, _before, _after, false, true);
+  };
+
+  return function (name, fn, _before, _after, only) {
+    return test(tape, name, fn, _before, _after, only);
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
